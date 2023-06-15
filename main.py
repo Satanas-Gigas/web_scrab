@@ -37,17 +37,17 @@ if __name__ == "__main__":
             if salary is not None:
                 salary = salary.text
             else:
-                salary = "Зарплата не указана!"
+                salary = "Г‡Г Г°ГЇГ«Г ГІГ  Г­ГҐ ГіГЄГ Г§Г Г­Г !"
 
             company_name = item.find("div", class_="vacancy-serp-item__meta-info-company").text
             city = item.find("div", attrs={"data-qa": "vacancy-serp__vacancy-address"}).text
 
             result.append({
-                "Вакансия": title,
-                "Вилка зп": re.sub(r"(\u202f)", " ", salary),
-                "Название компании": re.sub(r"(\xa0)", " ", company_name),
-                "Город": re.sub(r"(\xa01\xa0)", " ", city),
-                "Ссылка": link
+                "Р’Р°РєР°РЅСЃРёСЏ": title,
+                "Р’РёР»РєР° Р·Рї": re.sub(r"(\u202f)", " ", salary),
+                "РќР°Р·РІР°РЅРёРµ РєРѕРјРїР°РЅРёРё": re.sub(r"(\xa0)", " ", company_name),
+                "Р“РѕСЂРѕРґ": re.sub(r"(\xa01\xa0)", " ", city),
+                "РЎСЃС‹Р»РєР°": link
             })
 
     with open("result.json", "w", encoding="utf8") as file:
